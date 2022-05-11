@@ -26,7 +26,7 @@ function charts_overrides_views_data() {
     'title' => t('Scatter Field Plus'),
     'help' => t('Use this field for your data field in a scatter plot & have an extra field.'),
     'field' => [
-      'id' => 'field_charts_fields_scatter',
+      'id' => 'field_charts_fields_scatter_plus',
     ],
   ];
   return $data;
