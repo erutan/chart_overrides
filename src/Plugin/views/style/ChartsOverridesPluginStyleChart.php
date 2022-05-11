@@ -29,7 +29,7 @@ class ChartsOverridesPluginStyleChart extends ChartsPluginStyleChart {
   protected function defineOptions() {
     $options = parent::defineOptions();
 
-    $options['bonus_field']['default'] = '';
+    $options['flex_field']['default'] = '';
 
     return $options;
   }
@@ -43,10 +43,10 @@ class ChartsOverridesPluginStyleChart extends ChartsPluginStyleChart {
     $data_options = $this->displayHandler->getFieldLabels();
     $data_options[''] = $this->t('None');
 
-    $form['bonus_field'] = [
-      '#title' => t('Bonus Field'),
+    $form['flex_field'] = [
+      '#title' => t('Flex Field'),
       '#type' => 'textfield',
-      '#default_value' => $this->options['bonus_field'],
+      '#default_value' => $this->options['flex_field'],
       '#size' => 60,
       '#maxlength' => 255,
     ];
@@ -63,14 +63,14 @@ class ChartsOverridesPluginStyleChart extends ChartsPluginStyleChart {
 
     $form_options = $this->options;
 
-    // Allow argument tokens in the bonus_field.
-    $bonus_field = $form_options['bonus_field'] ?? '';
+    // Allow argument tokens in the flex_field.
+    $flex_field = $form_options['flex_field'] ?? '';
     $tokens = $this->getAvailableGlobalTokens();
     if (!empty($this->view->build_info['substitutions'])) {
       $tokens += $this->view->build_info['substitutions'];
     }
-    $bonus_field = $this->viewsTokenReplace($bonus_field, $tokens);
-    $options['bonus_field']['text'] = $bonus_field;
+    $flex_field = $this->viewsTokenReplace($flex_field, $tokens);
+    $options['flex_field']['text'] = $flex_field;
 
     $chart['#id'] = Html::getId($this->view->id() .  '_' .$this->view->current_display);
 

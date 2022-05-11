@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\charts\Plugin\views\field;
+namespace Drupal\charts_overrides\Plugin\views\field;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Form\FormStateInterface;
@@ -125,7 +125,7 @@ class ScatterFieldPlus extends FieldPluginBase implements ContainerFactoryPlugin
       '#type' => 'fieldset',
       '#collapsible' => FALSE,
       '#collapsed' => FALSE,
-      '#title' => $this->t('Select the field to be returned as a value with the key of "bonus".'),
+      '#title' => $this->t('Select the field to be returned as a value with the key of bonus.'),
       '#weight' => -9,
       '#required' => TRUE,
     ];
@@ -173,14 +173,16 @@ class ScatterFieldPlus extends FieldPluginBase implements ContainerFactoryPlugin
 
     if (!isset($data)) {
       // There's no value. Default to NULL.
-      $data = NULL;
+      $data = 0;
     }
 
+    /**
     // Ensure the input is numeric.
     if (!is_numeric($data)) {
       $this->messenger->addError($this->t('Check the formatting of your
         scatter_plus Field inputs: one or both of them are not numeric.'));
     }
+    */
 
     return $data;
   }

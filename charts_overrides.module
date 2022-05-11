@@ -17,12 +17,12 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
  * Implements hook_views_data().
  */
 function charts_overrides_views_data() {
-  $data['charts_fields']['table']['group'] = t('Charts');
-  $data['charts_fields']['table']['join'] = [
+  $data['charts_overrides']['table']['group'] = t('Charts');
+  $data['charts_overrides']['table']['join'] = [
     // Exist in all views.
     '#global' => [],
   ];
-  $data['charts_fields']['field_charts_fields_scatter_plus'] = [
+  $data['charts_overrides']['field_charts_fields_scatter_plus'] = [
     'title' => t('Scatter Field Plus'),
     'help' => t('Use this field for your data field in a scatter plot & have an extra field.'),
     'field' => [
