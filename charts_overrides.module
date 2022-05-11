@@ -1,0 +1,9 @@
+<?php
+
+use Drupal\charts\Plugin\views\style\ChartsPluginStyleChart;
+use Drupal\Core\Render\Element;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\views\ViewExecutable;
+use Drupal\charts\Util\Util;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;

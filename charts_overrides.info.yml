@@ -1,0 +1,7 @@
+name: Charts Overrides
+description: 'Use this module to override output from the Charts module.'
+type: module
+package: Charts
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:charts
