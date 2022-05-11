@@ -7,3 +7,27 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\views\ViewExecutable;
 use Drupal\charts\Util\Util;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+
+/**
+ * @file
+ * Charts Overrides - Custom Module.
+ */
+
+/**
+ * Implements hook_views_data().
+ */
+function charts_overrides_views_data() {
+  $data['charts_fields']['table']['group'] = t('Charts');
+  $data['charts_fields']['table']['join'] = [
+    // Exist in all views.
+    '#global' => [],
+  ];
+  $data['charts_fields']['field_charts_fields_scatter_plus'] = [
+    'title' => t('Scatter Field Plus'),
+    'help' => t('Use this field for your data field in a scatter plot & have an extra field.'),
+    'field' => [
+      'id' => 'field_charts_fields_scatter',
+    ],
+  ];
+  return $data;
+}
