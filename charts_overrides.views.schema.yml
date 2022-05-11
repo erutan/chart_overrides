@@ -1,0 +1,13 @@
+views.field.field_charts_fields_scatter_plus:
+  type: views_field
+  label: 'Scatter Field Plus'
+  mapping:
+    x_axis:
+      type: string
+      label: 'X Axis Field'
+    y_axis:
+      type: string
+      label: 'Y Axis Field'
+    bonus:
+      type: string
+      label: 'Bonus Field'
