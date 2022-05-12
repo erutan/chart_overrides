@@ -76,7 +76,7 @@ class ScatterFieldPlus extends FieldPluginBase implements ContainerFactoryPlugin
     $options['fieldset_three']['default'] = NULL;
     $options['fieldset_one']['x_axis'] = ['default' => NULL];
     $options['fieldset_two']['y_axis'] = ['default' => NULL];
-    $options['fieldset_three']['bonus'] = ['default' => NULL];
+    $options['fieldset_three']['scatter_plus_bonus'] = ['default' => NULL];
 
     return $options;
   }
@@ -125,15 +125,15 @@ class ScatterFieldPlus extends FieldPluginBase implements ContainerFactoryPlugin
       '#type' => 'fieldset',
       '#collapsible' => FALSE,
       '#collapsed' => FALSE,
-      '#title' => $this->t('Select the field to be returned as a value with the key of bonus.'),
+      '#title' => $this->t('Select the field to be returned as a value with the key of scatter_plus_bonus.'),
       '#weight' => -9,
       '#required' => TRUE,
     ];
-    $form['fieldset_three']['bonus'] = [
+    $form['fieldset_three']['scatter_plus_bonus'] = [
       '#type' => 'radios',
-      '#title' => $this->t('Bonus Field'),
+      '#title' => $this->t('Scatter Bonus Field'),
       '#options' => $fieldList,
-      '#default_value' => $this->options['fieldset_three']['bonus'],
+      '#default_value' => $this->options['fieldset_three']['scatter_plus_bonus'],
       '#weight' => -9,
     ];
 
@@ -197,12 +197,12 @@ class ScatterFieldPlus extends FieldPluginBase implements ContainerFactoryPlugin
 
     $xAxisFieldValue = $this->getFieldValue($values, 'fieldset_one', 'x_axis');
     $yAxisFieldValue = $this->getFieldValue($values, 'fieldset_two', 'y_axis');
-    $bonusFieldValue = $this->getFieldValue($values, 'fieldset_three', 'bonus');
+    $scatterPlusBonusFieldValue = $this->getFieldValue($values, 'fieldset_three', 'scatter_plus_bonus');
 
     return Json::encode([
       Json::decode($xAxisFieldValue),
       Json::decode($yAxisFieldValue),
-      Json::decode($bonusFieldValue),
+      Json::decode($scatterPlusBonusFieldValue),
     ]);
   }
 

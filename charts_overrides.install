@@ -31,7 +31,7 @@ function charts_overrides_update_8001() {
                         unset($style['options']['fields']);
                         $options = &$style['options'];
                         $chart_overrides_options_keys = [
-                            'subtitle',
+                            'scatter_plus_bonus',
                         ];
                     $chart_overrides_options = array_filter($options, function($option_key) use ($chart_overrides_options_keys) {
                         return in_array($option_key, $chart_overrides_options_keys);
@@ -46,7 +46,7 @@ function charts_overrides_update_8001() {
                             'fields',
                             'display',
                             'xaxis',
-                            'yaxis'
+                            'yaxis',
                         ];
                         foreach ($options as $option_key => $option) {
                             if (in_array($option_key, $chart_settings_elements)) {

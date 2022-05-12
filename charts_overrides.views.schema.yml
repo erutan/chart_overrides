@@ -8,6 +8,6 @@ views.field.field_charts_fields_scatter_plus:
     y_axis:
       type: string
       label: 'Y Axis Field'
-    bonus:
+    scatter_plus_bonus:
       type: string
       label: 'Bonus Field'
